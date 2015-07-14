@@ -1,0 +1,82 @@
+<section class="ui piled segment">
+
+  <img class="ui fluid image" src="images/virus-banner.jpg" alt="Virus One banner image">
+
+  <div class="ui segment">
+    <div class="ui stackable grid">
+      <div class="twelve wide column">
+        <h1 class="ui header" id="top">
+          <i class="settings icon"></i>
+          <div class="content">About Virus One</div>
+        </h1>
+        <p>Virus One is a plant cultivation automation, monitoring and reporting system designed by Rob Colbert as part of his medical and recreational cannabis cultivation activities. This software has been created as a labor of love after wasting over 20 years pursuing lies in Corporate America. Virus One is released to the cannabis cultivation community as an MIT-licensed open source contribution in the hope it will be used to improve the quality of cannabis being made available everywhere.</p>
+        <p>Virus One consists of many parts. There are temperature, humidity, light and other sensors connected to customized embedded systems. Devices are being read up to 1,000 times per second, and the information recorded in being processed, aggregated, sifted, filtered and sorted in a variety of ways to make reporting on and understanding the history of your grow a breeze. Each module reports to a centralized Node.js API server. The user interacts with an HTML5 web application on any device to observe and control their entire grow.</p>
+      </div>
+      <div class="four wide column">
+        <img class="ui fluid image" src="images/rob-colbert.jpg" style="margin-bottom: 12px;">
+        <a href="https://www.linkedin.com/pub/rob-colbert/9/9b6/b74">
+          <img class="ui centered image" src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" alt="View Rob Colbert's profile on LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui segment">
+    <h2 class="ui header">
+      <i class="info circle icon"></i>  
+      <div class="content">MongoDB</div>
+    </h2>
+    <p>MongoDB is used as the database and backing store for the Virus One application. All information about all plants, strains, environments, modules, nutrients, etc., is stored in MongoDB. MongoDB allows Virus One to deliver on the promise of the "Internet of Things" (IoT) applied to Indoor Controlled Environment Agriculture.</p>
+
+    <p>MongoDB offers the <a href="http://docs.mongodb.org/manual/core/aggregation-introduction/">Aggregation Framework</a>, an application development framework that makes it very easy and intuitive to generate meaningful reports from all of the information collected during each grow cycle. It's never been easier to ask for average temperatures, growth rates and other interesting data.</p>
+  </div>
+
+  <div class="ui horizontal divider"><div ng-click="goToTop();">return to top</div></div>
+
+  <div class="ui segment">
+    <h2 class="ui header">
+      <i class="info circle icon"></i>  
+      <div class="content">Node.js</div>
+    </h2>
+    <p>Node.js is used for pretty much everything in this entire application. The API server that allows alterations to the database is built using ExpressJS atop Node.js. The desktop application is hosted within node-webkit, a specialized project that integrates Node.js and a WebKit-based browser implementation highly specialized for desktop application development.</p>
+
+    <h3><a href="http://expressjs.com/">ExpressJS</a></h3>
+    <p>ExpressJS is used to implement a very standard HTTP REST API for VirusOne. This allows the application to offer an enormous amount of functionality with minimal development effort.</p>
+
+    <h3><a href="https://github.com/trentm/node-bunyan">Bunyan Logger</a></h3>
+    <p>The Bunyan Logger is used to record information about events within the Virus One API server. This structured logging system helps others understand the inner workings of the server when watching it work from the command line in development environments. These structured logs are also immensely useful to Virus One's application developers when diagnosing problems.</p>
+
+    <h3><a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a></h3>
+    <p>Secure HTTP (HTTPS) is used for all communications between the Web application and the Virus One Node.js server. This helps to ensure the privacy of the data being communicated.</p>
+  </div>
+  
+  <div class="ui horizontal divider"><div ng-click="goToTop();">return to top</div></div>
+
+  <div class="ui segment">
+    <h2 class="ui header">
+      <i class="info circle icon"></i>  
+      <div class="content">User Application</div>
+    </h2>
+    <p>The Virus One user application (the part you're using right now) has been built as a standards-compliant HTML5 Web application. This decision allows the Virus One grow automation and monitoring software to be used and controlled on any device offering a standards-compliant HTML5 web browser. This includes most smart phones, tablets, laptop and desktop computers. <a href="http://www.google.com/chrome/">Google Chrome</a> and <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a> are the recommended browsers for desktop computer use.</p>
+
+    <h3><a href="https://angularjs.org/">AngularJS</a></h3>
+    <p>AngularJS is an HTML5 Web application development framework enabling rapid development of Rich Internet Application software. It offers standard ways to define services, resources, user actions, gestures and other features and application functionality in a way that helps manage large applications, keep them extensible and maintainable.</p>
+
+    <h3><a href="http://semantic-ui.com/">Semantic UI</a></h3>
+    <p>Semantic is an HTML5 application development framework that helps developers create beautiful, responsive layouts using human-friendly HTML. It is similar to <a href="http://getbootstrap.com/">Twitter Bootstrap</a>, but offers a different philosophy for Web develoment that is perhaps a bit more semantically correct, vastly more intuitive and requires a lot less HTML markup to implement amazing user interfaces.</p>
+
+    <h3><a href="http://www.chartjs.org/">Chart.js</a></h3>
+    <p>All charting and graphing of data in Virus One is implemented using Chart.js. With six basic chart types and infinite control over appearance and user interactions, Virus One has the industry standard in charting and graphing with all features needed to provide enhanced data visualization and analysis for every grow cycle. You've never seen information about your grow presented like this.</p>
+
+    <h3><a href="http://neocotic.com/qr.js/">QR-js</a></h3>
+    <p>Virus One offers the ability to generate, print and scan QR codes per plant. Each plant receives a unique QR code that can be printed and used to easily and quickly identify each plant in your garden. Using a smartphone or tablet, the user merely points the device's camera at the QR code, Virus One loads that plant and the user can immediately interact with that plant's data.</p>
+
+    <h3><a href="http://momentjs.com/">Moment.js</a></h3>
+    <p>Moment.js is a small library that implements a lot of features for manipulating and displaying date and time information. You are reading phrases such as "two weeks from now" and "six days ago" because Virus One uses Moment.js.</p>
+
+
+  </div>
+  
+  <div class="ui horizontal divider"><div ng-click="goToTop();">return to top</div></div>
+
+</section>

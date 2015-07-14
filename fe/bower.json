@@ -1,0 +1,23 @@
+{
+  "name": "virus-one",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-animate": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "Chart.js": "~1.0.2",
+    "numeral": "~1.5.3",
+    "qr-js": "~1.1.3",
+    "moment": "~2.10.3",
+    "semantic-ui": "~2.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "virusOneApp"
+}

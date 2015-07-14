@@ -1,0 +1,16 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Plant Name</th>
+      <th>Strain</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="plant in plants.plants">
+      <td><a href="#/plant/{{ plant._id }}">{{ plant.name }}</a></td>
+      <td>{{ plant.strain }} <i class="woman icon"></i></td>
+      <td>{{ plant.createdString }}</td>
+    </tr>
+  </tbody>
+</table>

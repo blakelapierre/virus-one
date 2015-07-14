@@ -1,0 +1,36 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+.thc-background {
+  background-image: url('/images/thc-skeletal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.monitor-module {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.monitor-cell {
+  float: left;
+  width: 25%;
+  text-align: left;
+}
+
+.monitor-cell-container {
+  padding: 4px;
+  margin: 4px;
+  height: 6em;
+  background-color: #5cb85c;
+  color: #ffffff;
+}

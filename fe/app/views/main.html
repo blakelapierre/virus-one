@@ -1,0 +1,15 @@
+<!-- section class="ui two column stackable grid" -->
+<section class="ui two doubling cards">
+  <div class="green card" data-ng-repeat="module in monitor.modules">
+    <div class="content">
+      <div class="header">
+        <a href="#/module/{{ module._id }}">{{ module.name }}</a>
+      </div>
+      <div class="meta">
+        T:{{ module.monitors.temperature }} / 
+        RH {{ module.monitors.humidity }} / 
+        L: {{ module.monitors.lumens }}
+      </div>
+    </div>
+  </div>
+</section>

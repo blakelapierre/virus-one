@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Virus One | Growing Is Knowing&trade;</title>
+  <meta name="description" content="Virus One Grow Monitoring System">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/virusone.css -->
+  <link rel="stylesheet" href="styles/virusone.css">
+  <!-- endbuild -->
+
+</head>
+<body ng-app="virusOneApp">
+
+  <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="ui inverted left fixed vertical menu" ng-controller="HeaderCtrl" style="left: -140px;">
+    <div class="ui inverted black segment">
+      <div class="header item">
+        <a href="#/about" title="View information about Virus One" ng-click="closeSidebar();">VIRUS ONE</a>
+        <i ng-class="sidebarIcon" ng-click="onSidebarToggle($event);" style="cursor: pointer;" title="Toggle menu"></i>
+      </div>
+      <a class="item" ng-class="monitorClass" href="#/" ng-click="closeSidebar();">
+        <i class="right green dashboard icon"></i> Monitors
+      </a>
+      <a class="item" ng-class="environmentsClass" href="#/environments" ng-click="closeSidebar();">
+        <i class="olive grid layout icon"></i> Environments
+      </a>
+      <a class="item" ng-class="modulesClass" href="#/modules" ng-click="closeSidebar();">
+        <i class="yellow block layout icon"></i> Modules
+      </a>
+      <a class="item" ng-class="plantsClass" href="#/plants" ng-click="closeSidebar();">
+        <i class="green leaf icon"></i> Plants
+      </a>
+      <a class="item" ng-class="strainsClass" href="#/strains" ng-click="closeSidebar();">
+        <i class="teal puzzle icon"></i> Strains
+      </a>
+      <a class="item" ng-class="nutrientsClass" href="#/nutrients" ng-click="closeSidebar();">
+        <i class="brown cubes icon"></i> Nutrition
+      </a>
+    </div>
+  </div>
+
+  <div class="ui container">
+    <div ng-view=""></div>
+  </div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/Chart.js/Chart.js"></script>
+  <script src="bower_components/numeral/numeral.js"></script>
+  <script src="bower_components/qr-js/qr.min.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/semantic-ui/dist/semantic.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+
+  <script src="scripts/directives/grow-module-summary.js"></script>
+
+  <script src="scripts/services/environment.js"></script>
+  <script src="scripts/services/grow-module.js"></script>
+  <script src="scripts/services/plant.js"></script>
+
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/header.js"></script>
+
+  <script src="scripts/controllers/environments.js"></script>
+  <script src="scripts/controllers/modules.js"></script>
+  <script src="scripts/controllers/plant.js"></script>
+  <script src="scripts/controllers/plant-view.js"></script>
+  <script src="scripts/controllers/nutrients.js"></script>
+  <script src="scripts/controllers/strains.js"></script>
+  <script src="scripts/controllers/help.js"></script>
+  <!-- endbuild -->
+
+</body>
+</html>
