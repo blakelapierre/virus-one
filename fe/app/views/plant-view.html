@@ -1,20 +1,51 @@
-<h1>{{ plantView.plant.name }} <small>{{ plantView.plant.strain }}</small></h1>
+<section class="ui inverted segment">
+  <h1 class="ui icon header">
+    <i ng-class="plantView.plant.sex | genderIcon"></i>
+    <div class="content">
+      {{ plantView.plant.name }}
+    </div>
+  </h1>
 
-<div class="row">
-  <div class="col-xs-3">C: {{ plantView.plant.createdString }}</div>
-  <div class="col-xs-3">P: {{ plantView.plant.pottedDateString }}</div>
-  <div class="col-xs-3">F: {{ plantView.plant.flowerDateString }}</div>
-  <div class="col-xs-3">H: {{ plantView.plant.harvestDateString }}</div>
-</div>
-
-<section ng-show="plantView.plant.events.length !== 0">
-<h2>Events</h2>
+  <div class="ui stackable four column grid">
+    <div class="column">
+      <div class="ui inverted segment">
+        <h2 class="ui sub header">CREATED</h2>
+        <span>{{ plantView.plant.createdString | simpleDate }}</span>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <h2 class="ui sub header">POTTED</h2>
+        <span>{{ plantView.plant.pottedDateString }}</span>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <h2 class="ui sub header">FLOWERED</h2>
+        <span>{{ plantView.plant.flowerDateString }}</span>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <h2 class="ui sub header">HARVESTED</h2>
+        <span>{{ plantView.plant.harvestDateString }}</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section ng-show="plantView.plant.feedings.length !== 0">
-<h2>Feedings</h2>
+<section class="ui inverted segment">
+  <plant-monitor-chart></plant-monitor-chart>
 </section>
 
-<section ng-show="plantView.plant.monitors.length !== 0">
-<h2>Monitors</h2>
+<section class="ui inverted segment">
+  <h2 class="ui header">
+    <div class="content">Events</div>
+  </h2>
+</section>
+
+<section class="ui inverted segment">
+  <h2 class="ui header">
+    <div class="content">Feedings</div>
+  </h2>
 </section>

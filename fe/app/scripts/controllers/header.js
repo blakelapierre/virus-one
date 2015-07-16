@@ -1,6 +1,8 @@
 'use strict';
 
-function HeaderCtrl ($scope, $location, $anchorScroll) {
+/* global $ */
+
+function HeaderCtrl ($scope, $location) {
 
   var closedIcon = 'right chevron icon'; //'ellipsis vertical icon'
   var openIcon = 'left chevron icon';
@@ -38,8 +40,7 @@ function HeaderCtrl ($scope, $location, $anchorScroll) {
 
 HeaderCtrl.$inject = [
   '$scope',
-  '$location',
-  '$anchorScroll'
+  '$location'
 ];
 
 /**

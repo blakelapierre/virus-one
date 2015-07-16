@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: growModuleSummary', function () {
+describe('Directive: plantMonitorChart', function () {
 
   // load the directive's module
   beforeEach(module('virusOneApp'));
@@ -13,8 +13,8 @@ describe('Directive: growModuleSummary', function () {
   }));
 
   // it('should make hidden element visible', inject(function ($compile) {
-  //   element = angular.element('<grow-module-summary></grow-module-summary>');
+  //   element = angular.element('<plant-monitor-chart></plant-monitor-chart>');
   //   element = $compile(element)(scope);
-  //   expect(element.text()).toBe('this is the growModuleSummary directive');
+  //   expect(element.text()).toBe('this is the plantMonitorChart directive');
   // }));
 });

@@ -1,1 +1,31 @@
-<p>This is the strains view.</p>
+<div ng-show="strains.strains.length === 0">
+  <div class="ui inverted segment">
+    <h1 class="ui center aligned icon header">
+      <i class="red puzzle icon"></i>
+      <div class="content">
+        empty strain database
+      </div>
+    </h1>
+    <div class="ui inverted horizontal divider">why?</div>
+    <p>There are currently no strains defined in the Virus One database. Virus One can't track plants if you haven't told it what strains you're growing.</p>
+    <p>As an administrator, define one or more strains to begin tracking plants.</p>
+  </div>
+</div>
+<table class="ui table" ng-show="strains.strains.length !== 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Seed Co.</th>
+      <th>Breeder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="strain in strains.strains">
+      <td>{{ strain.name }}</td>
+      <td>{{ strain.source.seedCompany.name }}</td>
+      <td>{{ strain.source.breeder.name }}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

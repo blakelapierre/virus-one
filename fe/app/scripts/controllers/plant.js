@@ -3,24 +3,29 @@
 // License: MIT
 
 'use strict';
-/* global moment */
-function PlantsCtrl ($scope, Plant) {
+
+/* global: moment */
+
+function PlantsCtrl ($location, Plant) {
   var self = this;
 
   console.log('Hello from the PlantsCtrl controller');
+  this.$location = $location;
+  this.PlantService = Plant;
 
-  Plant.get(function (plants) {
+  this.PlantService.get(function (plants) {
     console.log('plants', plants);
-    angular.forEach(plants.plants, function (plant) {
-      plant.createdString = moment(plant.created).format('L');
-      console.log('plant.createdString', plant, plant.createdString);
-    });
     self.plants = plants.plants;
   });
 }
 
+PlantsCtrl.prototype.loadPlant = function (plantId) {
+  console.log('loading plant view', plantId.toString());
+  this.$location.url('/plant/' + plantId.toString());
+};
+
 PlantsCtrl.$inject = [
-  '$scope',
+  '$location',
   'Plant'
 ];
 

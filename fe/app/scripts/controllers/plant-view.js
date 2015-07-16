@@ -4,7 +4,7 @@
 
 'use strict';
 
-/* global moment */
+/* global: moment */
 
 function PlantViewCtrl ($scope, $route, Plant) {
   var self = this;
@@ -15,7 +15,6 @@ function PlantViewCtrl ($scope, $route, Plant) {
 
   Plant.get({ 'plantId': plantId }, function (plant) {
     self.plant = plant.plant;
-    self.plant.createdString = moment(self.plant.created).format('L');
     console.log('plant', self.plant);
   });
 }

@@ -1,15 +1,18 @@
-<!-- section class="ui two column stackable grid" -->
-<section class="ui two doubling cards">
-  <div class="green card" data-ng-repeat="module in monitor.modules">
-    <div class="content">
-      <div class="header">
-        <a href="#/module/{{ module._id }}">{{ module.name }}</a>
-      </div>
-      <div class="meta">
-        T:{{ module.monitors.temperature }} / 
-        RH {{ module.monitors.humidity }} / 
-        L: {{ module.monitors.lumens }}
-      </div>
-    </div>
-  </div>
-</section>
+<table class="ui inverted selectable right aligned celled table">
+  <thead>
+    <tr>
+      <th class="left aligned">Module</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Lumens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="module in monitor.modules" ng-click="monitor.loadModule(module._id);">
+      <td class="left aligned"><span>{{ module.name }}</span></td>
+      <td><span>{{ module.monitors.temperature }}</span></td>
+      <td><span>{{ module.monitors.humidity }}</span></td>
+      <td><span>{{ module.monitors.lumens }}</span></td>
+    </tr>
+  </tbody>
+</table>

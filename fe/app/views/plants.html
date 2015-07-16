@@ -1,16 +1,18 @@
-<table class="ui celled table">
+<table class="ui inverted selectable right aligned celled table">
   <thead>
     <tr>
-      <th>Plant Name</th>
+      <th class="left aligned">Plant Name</th>
       <th>Strain</th>
+      <th>Sex</th>
       <th>Created</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="plant in plants.plants">
-      <td><a href="#/plant/{{ plant._id }}">{{ plant.name }}</a></td>
-      <td>{{ plant.strain }} <i class="woman icon"></i></td>
-      <td>{{ plant.createdString }}</td>
+    <tr ng-repeat="plant in plants.plants" ng-click="plants.loadPlant(plant._id);" style="cursor: pointer;">
+      <td class="left aligned"><span>{{ plant.name }}</span></td>
+      <td><span>{{ plant.strain }}</span></td>
+      <td><span><i ng-class="plant.sex | genderIcon"></i></span></td>
+      <td><span>{{ plant.createdString | simpleDate }}</span></td>
     </tr>
   </tbody>
 </table>

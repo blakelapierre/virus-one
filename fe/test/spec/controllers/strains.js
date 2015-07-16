@@ -8,13 +8,13 @@ describe('Controller: StrainsCtrl', function () {
   var StrainsCtrl;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller/*, $rootScope*/) {
     StrainsCtrl = $controller('StrainsCtrl', {
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(StrainsCtrl.awesomeThings.length).toBe(3);
-  });
+  // it('should attach a list of awesomeThings to the scope', function () {
+  //   expect(StrainsCtrl.awesomeThings.length).toBe(3);
+  // });
 });

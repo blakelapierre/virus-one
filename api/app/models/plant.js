@@ -9,7 +9,7 @@ console.log('schema: Plant');
 
 var PlantSchema = new Schema({
   'strain': { 'type': String, 'required': true },
-  'sex': { 'type': String, 'enum': ['unknown', 'male', 'female'], 'required': false },
+  'sex': { 'type': String, 'enum': ['unknown', 'male', 'female'], 'default': 'unknown', 'required': false },
   'created': { 'type': Date, 'required': true, 'default': Date.now },
   'potted': { 'type': Date },
   'triggered': { 'type': Date },

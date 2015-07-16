@@ -1,8 +1,18 @@
-<div class="panel panel-default" data-ng-repeat="module in modules.modules">
-  <div class="panel-heading">
-    <h1 class="panel-title">{{ module.name }}</h1>
-  </div>
-  <div class="panel-body">
-    <p>The module's contained plants will appear here.</p>
-  </div>
-</div>
+<table class="ui inverted selectable right aligned celled table">
+  <thead>
+    <tr>
+      <th class="left aligned">Module Name</th>
+      <th>Plant Count</th>
+      <th>Temp</th>
+      <th>RH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="module in modules.modules">
+      <td class="left aligned">{{ module.name }}</td>
+      <td>{{ module.plantCount | zeroNone }}</td>
+      <td>{{ module.monitors.temperature }}</td>
+      <td>{{ module.monitors.humidity }}</td>
+    </tr>
+  </tbody>
+</table>

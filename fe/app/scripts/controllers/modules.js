@@ -5,6 +5,9 @@ function ModulesCtrl (GrowModule) {
 
   GrowModule.get(function (modules) {
     console.log('modules', modules);
+    modules.modules.forEach(function (module) {
+      module.plantCount = Math.floor(Math.random() * 4);
+    });
     self.modules = modules.modules;
   });
 }
