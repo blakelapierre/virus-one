@@ -1,4 +1,5 @@
-<div ng-show="strains.strains.length === 0">
+<button class="ui inverted basic button" ng-click="strains.showNewStrainModal();">New Strain</button>
+<div class="ui inverted segment" ng-show="strains.strains.length === 0">
   <div class="ui inverted segment">
     <h1 class="ui center aligned icon header">
       <i class="red puzzle icon"></i>
@@ -29,3 +30,31 @@
     </tr>
   </tbody>
 </table>
+
+<div class="ui modal" id="newStrainModal">
+  <i class="close icon"></i>
+  <div class="header">
+    New Strain
+  </div>
+  <div class="content">
+    <form class="ui form">
+      <div class="field">
+        <label>Strain Name</label>
+        <input placeholder="Strain Name" type="text">
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea rows="3"></textarea>
+      </div>      
+    </form>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button" ng-click="strains.createStrain($event);">
+      Add Strain
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>

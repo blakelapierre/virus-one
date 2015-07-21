@@ -5,8 +5,8 @@ describe('Directive: plantMonitorChart', function () {
   // load the directive's module
   beforeEach(module('virusOneApp'));
 
-  var element,
-    scope;
+//  var element;
+  var scope;
 
   beforeEach(inject(function ($rootScope) {
     scope = $rootScope.$new();

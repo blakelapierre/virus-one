@@ -24,6 +24,14 @@ PlantsCtrl.prototype.loadPlant = function (plantId) {
   this.$location.url('/plant/' + plantId.toString());
 };
 
+PlantsCtrl.prototype.showNewPlantModal = function ( ) {
+  angular.element('#newPlantModal').modal('show');
+};
+
+PlantsCtrl.prototype.createPlant = function (/* $event */) {
+  console.log('PlantsCtrl.createPlant is stubbed');
+};
+
 PlantsCtrl.$inject = [
   '$location',
   'Plant'

@@ -25,11 +25,11 @@ var StrainSchema = new Schema({
   'name' : { 'type': String, 'required': true, 'unique': true },
   'source': {
     'seedCompany': {
-      'name': { 'type': String, 'required': true },
+      'name': { 'type': String, 'required': false },
       'href': { 'type': String, 'required': false }
     },
     'breeder': {
-      'name': { 'type': String, 'required': true },
+      'name': { 'type': String, 'required': false },
       'href': { 'type': String, 'required': false }
     }
   },

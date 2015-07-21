@@ -12,6 +12,14 @@ function StrainsCtrl (Strain) {
   });
 }
 
+StrainsCtrl.prototype.showNewStrainModal = function ( ) {
+  angular.element('#newStrainModal').modal('show');
+};
+
+StrainsCtrl.prototype.createStrain = function (/* $event */) {
+  console.log('StrainsCtrl.createStrain is stubbed.');
+};
+
 StrainsCtrl.$inject = [
   'Strain'
 ];

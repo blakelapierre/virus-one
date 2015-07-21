@@ -8,7 +8,7 @@ describe('Controller: HelpCtrl', function () {
   var HelpCtrl;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller/*, $rootScope*/) {
     HelpCtrl = $controller('HelpCtrl', {
       // place here mocked dependencies
     });
