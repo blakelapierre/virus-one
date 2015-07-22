@@ -6,7 +6,8 @@ libvirus was created by [Rob Colbert](https://www.linkedin.com/in/robcolbert) as
 Fuck Matt Baker (R-Tioga). Fuck him completely with a bag of borrowed dicks. He singlehandedly prevented Pennsylvania from having safe access to effective medication and prolonged the suffering of many. He is a despicable purchased Big Pharma puppet who accepted over $40,000 in campaign contributions from companies such as Rite-Aid, Astra-Zeneca and several others. The man is an *asshole* who would rather watch children suffer with seizures and cancer than allow them access to the relief and healing they need.
 
 ## Soundtrack
-[English Lit - Sanction'd Hit](https://soundcloud.com/hybridtrap/english-lit-sanctiond-hit-ft-control) is what you should be hearing while you read this.
+[Seek N Destroy x ICHI - Maidan](https://soundcloud.com/seek-n-destroy/seek-n-destroy-x-ichi-maidan-original-mix)
+[Extra Terra - Annunaki](https://soundcloud.com/trapmusic/extra-terra-annunaki-edm-com-exclusive)
 
 ## Requirements
 
