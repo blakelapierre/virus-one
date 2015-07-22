@@ -3,10 +3,10 @@ The Virus One grow automation, monitoring and reporting application. As time pas
 
 ## Getting Started
 
-git clone git@github.com:robcolbert/virus-one.git
-git submodule init
-git submodule update
-git pull origin
-git checkout develop
+    git clone git@github.com:robcolbert/virus-one.git
+    git submodule init
+    git submodule update
+    git pull origin
+    git checkout develop
 
 Do stuff. Keep it.
