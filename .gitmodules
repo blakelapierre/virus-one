@@ -1,3 +1,6 @@
 [submodule "system/vendor/rapidjson"]
 	path = system/vendor/rapidjson
 	url = git://github.com/miloyip/rapidjson.git
+[submodule "system/vendor/spdlog"]
+	path = system/vendor/spdlog
+	url = git@github.com:gabime/spdlog.git

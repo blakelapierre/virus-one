@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd libvirus; cmake .; make; cd ..
+cd libvirustest; cmake .; make; cd ..
+cd virustest; cmake .; make; cd ..
