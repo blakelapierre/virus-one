@@ -1,15 +1,20 @@
+// experiments/json_parse.cpp
+// Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
+// License: MIT (see LICENSE)
+
 #include <virus_macros.h>
 #include <experiments/json_parse.h>
+#include <rapidjson/document.h>
 
-VirusTest::JsonParseExperiment::JsonParseExperiment()
-: Experiment("JsonParseExperiment")
+VirusTest::Experiments::JsonParse::JsonParse()
+: Experiment("JsonParse")
 {}
 
-VirusTest::JsonParseExperiment::~JsonParseExperiment()
+VirusTest::Experiments::JsonParse::~JsonParse()
 {}
 
 void
-VirusTest::JsonParseExperiment::run() {
+VirusTest::Experiments::JsonParse::run() {
   const char* jsonText = "{ \"project\":\"virusone\", \"stars\":10 }";
   try {
 

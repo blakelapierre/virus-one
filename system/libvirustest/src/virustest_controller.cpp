@@ -10,22 +10,22 @@ VirusTest::Controller::Controller(
   const std::string& name
 )
 : m_name(name)
-, m_log(spdlog::get("controllers"))
+, m_log(spdlog::get("controller"))
 {}
 
 VirusTest::Controller::~Controller()
 {}
 
 void
-VirusTest::Controller::addExperiment(Experiment* pExperiment) {
-  m_log->info("add experiment [{}]", pExperiment->getName());
-  m_experiments.push_back(pExperiment);
+VirusTest::Controller::addExperiment(std::shared_ptr<Experiment> experiment) {
+  m_log->info("add experiment [{}]", experiment->getName());
+  m_experiments.push_back(experiment);
 }
 
 bool
-VirusTest::Controller::removeExperiment(Experiment* pExperiment) {
-  m_log->info("remove experiment [{}]", pExperiment->getName());
-  ExperimentListIterator ei = std::find(m_experiments.begin(), m_experiments.end(), pExperiment);
+VirusTest::Controller::removeExperiment(std::shared_ptr<Experiment> experiment) {
+  m_log->info("remove experiment [{}]", experiment->getName());
+  ExperimentListIterator ei = std::find(m_experiments.begin(), m_experiments.end(), experiment);
   if (ei == m_experiments.end()) {
     return false;
   }
@@ -44,11 +44,11 @@ VirusTest::Controller::runExperiments() {
   ExperimentListIterator ei, ee = m_experiments.end();
   m_log->info("running experiments");
   for (ei = m_experiments.begin(); ei != ee; ++ei) {
-    Experiment* e = (*ei);
-    m_log->info("starting experiment [{}]", e->getName().c_str());
-    e->run();
-    m_log->info("finished experiment [result={}]", e->getResultText());
-    m_log->info("experiment [{}] result [{}]", (*ei)->getName().c_str(), (*ei)->getResultText().c_str());
+    std::shared_ptr<Experiment> experiment = (*ei);
+    m_log->info("starting experiment [{}]", experiment->getName());
+    experiment->run();
+    m_log->info("finished experiment [result={}]", experiment->getResultText());
+    m_log->info("experiment [{}] result [{}]", experiment->getName(), experiment->getResultText());
   }
   m_log->info("finished experiments");
 }
@@ -62,8 +62,8 @@ VirusTest::Controller::runChildren() {
   m_log->info("running child controllers");
   ChildListIterator ci, ce = m_children.end();
   for (ci = m_children.begin(); ci != ce; ++ci) {
-    Controller* pChild = (*ci);
-    pChild->run();
+    std::shared_ptr<Controller> child = (*ci);
+    child->run();
   }
   m_log->info("finished child controllers");
 }

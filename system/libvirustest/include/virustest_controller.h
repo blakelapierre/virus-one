@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <memory>
 #include <string>
 #include <list>
 
@@ -27,19 +28,19 @@ namespace VirusTest {
 
     const std::string& getName() { return m_name; }
 
-    virtual void addExperiment(Experiment* pExperiment);
-    virtual bool removeExperiment(Experiment* pExperiment);
+    virtual void addExperiment(std::shared_ptr<Experiment> experiment);
+    virtual bool removeExperiment(std::shared_ptr<Experiment> experiment);
 
     virtual void run();
 
   protected:
 
-    typedef std::list<Experiment*> ExperimentList;
+    typedef std::list<std::shared_ptr<Experiment>> ExperimentList;
     typedef ExperimentList::iterator ExperimentListIterator;
     typedef ExperimentList::const_iterator ExperimentListConstIterator;
     ExperimentList m_experiments;
 
-    typedef std::list<Controller*> ChildList;
+    typedef std::list<std::shared_ptr<Controller>> ChildList;
     typedef ChildList::iterator ChildListIterator;
     typedef ChildList::const_iterator ChildListConstIterator;
     ChildList m_children;

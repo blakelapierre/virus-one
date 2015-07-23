@@ -42,7 +42,7 @@ VirusTest::Suite::run() {
     std::shared_ptr<Controller> controller = (*cli);
     m_log->info("controller {} starting", controller->getName().c_str());
     controller->run();
-    m_log->info("controller {} finished {}", controller->getName() /*, controller->getResultText()*/);
+    m_log->info("controller {} finished", controller->getName());
   }
   m_log->info("suite {} complete", m_name);
 }

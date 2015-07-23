@@ -1,8 +1,23 @@
+// experiments/json_write.h
+// Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
+// License: MIT (see LICENSE)
+
 #include <virus_macros.h>
 #include <experiments/json_write.h>
 
+#include <rapidjson/stringbuffer.h>
+#include <rapidjson/writer.h>
+#include <rapidjson/document.h>
+
+VirusTest::Experiments::JsonWrite::JsonWrite()
+: Experiment("JsonWrite")
+{}
+
+VirusTest::Experiments::JsonWrite::~JsonWrite()
+{}
+
 void
-VirusTest::JsonWriteExperiment::run(void) {
+VirusTest::Experiments::JsonWrite::run(void) {
   rapidjson::Document document(rapidjson::kObjectType);
   rapidjson::Document::AllocatorType& allocator = document.GetAllocator();
 

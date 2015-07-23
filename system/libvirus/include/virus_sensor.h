@@ -4,12 +4,14 @@
 
 #pragma once
 
+#include <virus_pollable.h>
+
 #include <uuid/uuid.h>
 #include "rapidjson/document.h"
 
 namespace VirusOne {
 
-  class Sensor {
+  class Sensor : public Pollable {
   public:
 
     Sensor();
@@ -17,11 +19,11 @@ namespace VirusOne {
     virtual ~Sensor();
 
     virtual bool reset() = 0;
-    virtual bool isConnected() = 0;
-    virtual bool isCalibrated() = 0;
+    virtual bool isConnected() const = 0;
+    virtual bool isCalibrated() const = 0;
 
-    virtual const std::string getTypeName() = 0;
-    virtual const rapidjson::Value& getCurrentValue() = 0;
+    virtual const std::string getTypeName() const = 0;
+    virtual const rapidjson::Value& getCurrentValue() const = 0;
 
   protected:
 

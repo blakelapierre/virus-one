@@ -8,6 +8,7 @@
 #include <string>
 
 namespace VirusTest {
+
   class Exception : public std::exception {
   public:
 
@@ -21,4 +22,5 @@ namespace VirusTest {
     std::string m_message;
 
   };
+
 }

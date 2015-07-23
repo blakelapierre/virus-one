@@ -17,9 +17,10 @@ add_library(
   src/virus_address_ipv4.cpp
   src/virus_exception.cpp
   src/virus_host.cpp
+  src/virus_pollable.cpp
+  src/virus_pollgroup.cpp
   src/virus_port_number.cpp
   src/virus_sensor.cpp
-  src/virus_sensor_temperature_simulator.cpp
   src/virus_socket.cpp
   src/virus_timestamp.cpp
 )

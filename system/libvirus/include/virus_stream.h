@@ -4,11 +4,12 @@
 
 #pragma once
 
+#include <virus_pollable.h>
 #include <cstddef>
 
 namespace VirusOne {
 
-  class Stream {
+  class Stream : public Pollable {
   public:
 
     Stream() {}

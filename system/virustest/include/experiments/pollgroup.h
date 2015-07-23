@@ -1,4 +1,4 @@
-// experiments/json_parse.h
+// experiments/pollgroup_poll.h
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
@@ -8,15 +8,15 @@
 
 namespace VirusTest { namespace Experiments {
 
-  class JsonParse : public VirusTest::Experiment {
+  class PollGroup : public VirusTest::Experiment {
   public: // interface methods
 
     virtual void run();
 
   public: // methods
 
-    JsonParse();
-    virtual ~JsonParse();
+    PollGroup();
+    virtual ~PollGroup();
 
   protected:
 

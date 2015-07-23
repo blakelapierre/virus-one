@@ -1,19 +1,25 @@
+// experiments/json_write.h
+// Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
+// License: MIT (see LICENSE)
+
 #pragma once
 
-namespace VirusTest {
+#include <virustest_experiment.h>
 
-  class JsonWriteExperiment : public VirusTest::Experiment {
+namespace VirusTest { namespace Experiments {
+
+  class JsonWrite : public VirusTest::Experiment {
   public: // interface methods
 
     virtual void run();
 
   public: // methods
 
-    JsonWriteExperiment();
-    virtual ~JsonWriteExperiment();
+    JsonWrite();
+    virtual ~JsonWrite();
 
   protected:
 
   };
 
-}
+} /* Experiments */ } /* VirusTest */
