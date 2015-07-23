@@ -1,10 +1,6 @@
 # libvirus
 libvirus is an MIT-licensed open source C++ library for use with the VirusOne Grow Automation and Monitoring system. It provides services to the virusd system daemon and enables 3rd-party application developers to easily build for and extend the VirusOne platform with new features, services and functionality.
 
-libvirus was created by [Rob Colbert](https://www.linkedin.com/in/robcolbert) as part of a *major* act of civil disobedience agaisnt the unjust laws of cannabis prohibition. The creation of this software is part of what I did while mastering the cultivation of cannabis living in Pittsburgh, Pennsylvania...where cannabis in all forms is whack-a-doo illegal. Creating this software in my lab is probably a state felony.
-
-Fuck Matt Baker (R-Tioga). Fuck him completely with a bag of borrowed dicks. He singlehandedly prevented Pennsylvania from having safe access to effective medication and prolonged the suffering of many. He is a despicable purchased Big Pharma puppet who accepted over $40,000 in campaign contributions from companies such as Rite-Aid, Astra-Zeneca and several others. The man is an *asshole* who would rather watch children suffer with seizures and cancer than allow them access to the relief and healing they need.
-
 ## Soundtrack
 [Seek N Destroy x ICHI - Maidan](https://soundcloud.com/seek-n-destroy/seek-n-destroy-x-ichi-maidan-original-mix)
 [Extra Terra - Annunaki](https://soundcloud.com/trapmusic/extra-terra-annunaki-edm-com-exclusive)
