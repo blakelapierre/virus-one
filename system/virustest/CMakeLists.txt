@@ -23,6 +23,7 @@ add_executable(
   "src/experiments/json_write.cpp"
   "src/experiments/pollgroup.cpp"
   "src/suites/system.cpp"
+  "src/suites/network.cpp"
   "src/suites/json.cpp"
   "src/main.cpp"
 )
