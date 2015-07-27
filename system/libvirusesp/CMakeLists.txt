@@ -15,8 +15,18 @@ include_directories(
 
 add_library(
   virusesp
-  src/sensors/temperature.cpp
-  src/sensors/temperature_simulator.cpp
+  
+  src/device.cpp
+
+  src/devices/control.cpp
+  src/devices/controls/analog.cpp
+  src/devices/controls/switch.cpp
+  
+  src/devices/sensor.cpp
+  src/devices/sensors/temperature.cpp
+
+  src/service.cpp
+  src/service_exception.cpp
 )
 
 add_dependencies(virusesp virus)

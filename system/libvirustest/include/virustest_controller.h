@@ -28,7 +28,7 @@ namespace VirusTest {
 
     const std::string& getName() { return m_name; }
 
-    virtual void addExperiment(std::shared_ptr<Experiment> experiment);
+    virtual std::shared_ptr<Experiment> addExperiment(std::shared_ptr<Experiment> experiment);
     virtual bool removeExperiment(std::shared_ptr<Experiment> experiment);
 
     virtual void run();

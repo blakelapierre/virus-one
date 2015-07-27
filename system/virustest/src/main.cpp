@@ -11,8 +11,9 @@
 
 #include <virus_timestamp.h>
 
-#include <suites/json.h>
 #include <suites/system.h>
+#include <suites/network.h>
+#include <suites/json.h>
 
 /*
  * Main test script
@@ -25,6 +26,8 @@ int main (int argc, char* argv[]) {
   log->info("configuring tests");
 
   auto environment = std::make_shared<VirusTest::Environment>("virustest");
+  environment->queueSuite(std::make_shared<VirusTest::Suites::System>());
+  environment->queueSuite(std::make_shared<VirusTest::Suites::Network>());
   environment->queueSuite(std::make_shared<VirusTest::Suites::Json>());
 
   VirusOne::Timestamp tsStart;

@@ -6,6 +6,7 @@
 
 #include <string>
 #include <list>
+#include <memory>
 
 namespace VirusTest {
 
@@ -33,8 +34,8 @@ namespace VirusTest {
 
     const std::string& getName();
 
-    virtual void addChild(Experiment* pExperiment);
-    virtual bool removeChild(Experiment* pExperiment);
+    virtual std::shared_ptr<Experiment> addChild(std::shared_ptr<Experiment> experiment);
+    virtual bool removeChild(std::shared_ptr<Experiment> experiment);
 
     virtual ExperimentResult getResult() const;
     virtual const std::string getResultText() const;
@@ -53,7 +54,7 @@ namespace VirusTest {
     std::string m_name;
     ExperimentResult m_result;
 
-    typedef std::list<Experiment*> ChildList;
+    typedef std::list<std::shared_ptr<Experiment>> ChildList;
     typedef ChildList::iterator ChildListIterator;
     typedef ChildList::const_iterator ChildListConstIterator;
     ChildList m_children;

@@ -49,9 +49,8 @@ VirusTest::Environment::run() {
 void
 VirusTest::Environment::workerThread(std::shared_ptr<Suite> suite) {
   std::shared_ptr<spdlog::logger> log = spdlog::get("environment");
-  log->info("suite {} starting", suite->getName());
+  log->info("starting suite {}", suite->getName());
   suite->run();
-  log->info("suite {} completed", suite->getName());
 }
 
 void

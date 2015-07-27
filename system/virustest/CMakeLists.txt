@@ -19,9 +19,11 @@ include_directories (
 
 add_executable(
   virusone-test
-  "src/experiments/json_parse.cpp"
-  "src/experiments/json_write.cpp"
-  "src/experiments/pollgroup.cpp"
+  "src/controllers/network/port_number.cpp"
+  "src/experiments/json/parse.cpp"
+  "src/experiments/json/write.cpp"
+  "src/experiments/network/port_number/assign.cpp"
+  "src/experiments/system/pollgroup.cpp"
   "src/suites/system.cpp"
   "src/suites/network.cpp"
   "src/suites/json.cpp"

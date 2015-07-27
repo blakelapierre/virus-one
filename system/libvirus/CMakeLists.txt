@@ -14,15 +14,18 @@ include_directories(
 
 add_library(
   virus
-  src/virus_address_ipv4.cpp
-  src/virus_exception.cpp
-  src/virus_host.cpp
-  src/virus_pollable.cpp
-  src/virus_pollgroup.cpp
-  src/virus_port_number.cpp
-  src/virus_sensor.cpp
-  src/virus_socket.cpp
-  src/virus_timestamp.cpp
+  src/network/address_ipv4.cpp
+  src/network/host.cpp
+  src/network/port_number.cpp
+  src/network/socket.cpp
+  src/services/log.cpp
+  src/services/pollgroup.cpp
+  src/services/smoothed_value.cpp
+  src/services/timestamp.cpp
+  src/services/uuid.cpp
+  src/system/exception.cpp
+  src/system/pollable.cpp
+  src/system/stream.cpp
 )
 
 target_include_directories (virus PUBLIC include)

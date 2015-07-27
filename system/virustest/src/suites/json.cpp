@@ -10,11 +10,11 @@
 
 VirusTest::Suites::Json::Json()
 : VirusTest::Suite("JSON Processing")
-, m_controller(std::make_shared<VirusTest::Controller>("JSON Test Controller"))
 {
-  m_controller->addExperiment(std::make_shared<VirusTest::Experiments::JsonParse>());
-  m_controller->addExperiment(std::make_shared<VirusTest::Experiments::JsonWrite>());
-  addController(m_controller);
+  auto controller = std::make_shared<VirusTest::Controller>("JSON Test Controller");
+  controller->addExperiment(std::make_shared<VirusTest::Experiments::JsonParse>());
+  controller->addExperiment(std::make_shared<VirusTest::Experiments::JsonWrite>());
+  addController(controller);
 }
 
 VirusTest::Suites::Json::~Json()
