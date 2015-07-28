@@ -40,12 +40,12 @@ VirusTest::Experiment::removeChild(std::shared_ptr<Experiment> experiment) {
 
 void
 VirusTest::Experiment::expect(bool predicate, const std::string& testName, const std::string& message) {
-  if (predicate) {
-    m_log->info("test {} PASS");
+  if (!predicate) {
+    m_log->error("test {} produced unexpected results", testName);
+    fail(message); // fail() throws an exception
     return;
   }
-  m_log->error("test {} produced unexpected results", testName);
-  fail(message); // fail() throws an exception
+  m_log->info("test {} PASS", testName);
 }
 
 void
@@ -56,7 +56,7 @@ VirusTest::Experiment::setResult(ExperimentResult result) {
 void
 VirusTest::Experiment::pass() {
   setResult(kResultPass);
-  m_log->info("{} result PASS", m_name);
+  m_log->info("experiment {} PASS", m_name);
 }
 
 void
