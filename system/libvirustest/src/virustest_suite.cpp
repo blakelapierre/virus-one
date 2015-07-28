@@ -15,7 +15,7 @@ VirusTest::Suite::~Suite()
 
 void
 VirusTest::Suite::addController(std::shared_ptr<Controller> controller) {
-  m_log->info("adding controller {}", controller->getName());
+  m_log->debug("adding controller {}", controller->getName());
   m_controllers.push_back(controller);
 }
 
@@ -28,7 +28,7 @@ VirusTest::Suite::removeController(std::shared_ptr<Controller> controller) {
     return false;
   }
 
-  m_log->info("removing controller {}", controller->getName());
+  m_log->debug("removing controller {}", controller->getName());
   m_controllers.erase(cli);
 
   return true;
@@ -37,12 +37,12 @@ VirusTest::Suite::removeController(std::shared_ptr<Controller> controller) {
 void
 VirusTest::Suite::run() {
   ControllerListIterator cli, cle = m_controllers.end();
-  m_log->info("suite {} starting", m_name);
+  m_log->debug("suite {} starting", m_name);
   for (cli = m_controllers.begin(); cli != cle; ++cli) {
     std::shared_ptr<Controller> controller = (*cli);
-    m_log->info("controller {} starting", controller->getName().c_str());
+    m_log->debug("controller {} starting", controller->getName().c_str());
     controller->run();
-    m_log->info("controller {} finished", controller->getName());
+    m_log->debug("controller {} finished", controller->getName());
   }
-  m_log->info("suite {} complete", m_name);
+  m_log->debug("suite {} complete", m_name);
 }

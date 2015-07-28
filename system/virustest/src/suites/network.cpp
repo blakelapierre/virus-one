@@ -10,7 +10,7 @@
 VirusTest::Suites::Network::Network()
 : VirusTest::Suite("Network")
 {
-  addController(std::make_shared< VirusTest::Controllers::Network::PortNumber >());
+  addController(std::make_shared<VirusTest::Controllers::Network::PortNumber>());
 }
 
 VirusTest::Suites::Network::~Network()

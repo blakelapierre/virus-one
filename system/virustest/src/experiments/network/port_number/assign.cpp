@@ -17,7 +17,7 @@ VirusTest::Experiments::Network::PortNumber::Assign::~Assign()
 void
 VirusTest::Experiments::Network::PortNumber::Assign::run() {
   VirusOne::Network::PortNumber portNumber;
-  expect(portNumber.value() == 0, "constructor", "network port did not initialize to zero");
+  expect(portNumber.value() == 0, "default constructor", "network port did not initialize to zero");
 
   portNumber = 80;
   expect(portNumber.value() == 80, "assignment operator", "network port number assignment operator has failed");

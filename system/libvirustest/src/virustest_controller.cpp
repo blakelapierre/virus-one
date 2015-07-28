@@ -46,7 +46,7 @@ VirusTest::Controller::runExperiments() {
   m_log->debug("{} running experiments", m_name);
   for (ei = m_experiments.begin(); ei != ee; ++ei) {
     std::shared_ptr<Experiment> experiment = (*ei);
-    m_log->debug("{} starting experiment {}", m_name, experiment->getName());
+    m_log->info("{} starting experiment {}", m_name, experiment->getName());
     experiment->run();
     m_log->debug("{} finished experiment ({})", m_name, experiment->getResultText());
   }

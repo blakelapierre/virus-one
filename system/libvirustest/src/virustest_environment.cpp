@@ -11,7 +11,7 @@ VirusTest::Environment::Environment(const std::string& name)
 {
   auto concurrency = std::thread::hardware_concurrency();
   m_maxWorkers = concurrency == 0 ? 4 : concurrency;
-  m_log->info("maxWorkers {}", m_maxWorkers);
+  m_log->debug("maxWorkers {}", m_maxWorkers);
 }
 
 VirusTest::Environment::~Environment()
@@ -24,7 +24,7 @@ VirusTest::Environment::queueSuite(std::shared_ptr<Suite> suite) {
 
 void
 VirusTest::Environment::run() {
-  m_log->info("environment {} starting with {} queued suites", m_name, m_suiteQueue.size());
+  m_log->debug("environment {} starting with {} queued suites", m_name, m_suiteQueue.size());
   while (!m_suiteQueue.empty()) {
     if (m_workers.size() >= m_maxWorkers) {
       std::this_thread::yield();
@@ -33,7 +33,7 @@ VirusTest::Environment::run() {
     }
 
     while (!m_suiteQueue.empty() && (m_workers.size() < m_maxWorkers)) {
-      m_log->info("worker accepting suite {}", m_suiteQueue.front()->getName());
+      m_log->debug("worker accepting suite {}", m_suiteQueue.front()->getName());
       m_workers.push_back(std::thread(workerThread, m_suiteQueue.front()));
       m_suiteQueue.pop();
     }
@@ -49,7 +49,7 @@ VirusTest::Environment::run() {
 void
 VirusTest::Environment::workerThread(std::shared_ptr<Suite> suite) {
   std::shared_ptr<spdlog::logger> log = spdlog::get("environment");
-  log->info("starting suite {}", suite->getName());
+  log->debug("starting suite {}", suite->getName());
   suite->run();
 }
 

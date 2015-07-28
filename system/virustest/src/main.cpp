@@ -23,7 +23,7 @@ int main (int argc, char* argv[]) {
   VirusTest::System system;
 
   std::shared_ptr<spdlog::logger> log = spdlog::stdout_logger_mt("virustest");
-  log->info("configuring tests");
+  log->debug("configuring tests");
 
   auto environment = std::make_shared<VirusTest::Environment>("virustest");
   environment->queueSuite(std::make_shared<VirusTest::Suites::System>());

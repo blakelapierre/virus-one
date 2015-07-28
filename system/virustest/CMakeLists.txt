@@ -23,6 +23,8 @@ add_executable(
   "src/experiments/json/parse.cpp"
   "src/experiments/json/write.cpp"
   "src/experiments/network/port_number/assign.cpp"
+  "src/experiments/network/port_number/equality.cpp"
+  "src/experiments/network/port_number/inequality.cpp"
   "src/experiments/system/pollgroup.cpp"
   "src/suites/system.cpp"
   "src/suites/network.cpp"

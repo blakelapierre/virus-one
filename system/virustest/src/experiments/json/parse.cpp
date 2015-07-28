@@ -21,17 +21,17 @@ VirusTest::Experiments::JsonParse::run() {
     rapidjson::Document document;
     document.Parse(jsonText);
 
-    expect(document.IsObject(), "JsonParse", "generated document is not an object");
-    expect(document.HasMember("project"), "JsonParse", "generated document does not have a 'project' member");
-    expect(document.HasMember("stars"), "JsonParse", "generated document does not have a 'stars' member");
+    expect(document.IsObject(), "Document::IsObject", "generated document is not an object");
+    expect(document.HasMember("project"), "Document::HasMember('project')", "generated document does not have a 'project' member");
+    expect(document.HasMember("stars"), "Document::HasMember('stars')", "generated document does not have a 'stars' member");
 
     rapidjson::Value& value = document["stars"];
-    expect(value.IsNumber(), "JsonParse", "stars member is not a number");
-    expect(value == 10, "JsonParse", "star count is not 10 as expected");
+    expect(value.IsNumber(), "Value::IsNumber", "stars member is not a number");
+    expect(value == 10, "Value Equality (integer)", "star count is not 10 as expected");
 
     value = document["project"];
-    expect(value.IsString(), "JsonParse", "project member is not a string");
-    expect(value == "virusone", "JsonParse", "project is not set to 'virusone'");
+    expect(value.IsString(), "Value::IsString", "project member is not a string");
+    expect(value == "virusone", "Value Equality (string)", "project is not set to 'virusone'");
 
   } catch (std::exception e) {
 

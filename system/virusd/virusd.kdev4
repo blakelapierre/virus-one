@@ -1,0 +1,4 @@
+[Project]
+Name=virusd
+Manager=KDevCMakeManager
+VersionControl=kdevgit

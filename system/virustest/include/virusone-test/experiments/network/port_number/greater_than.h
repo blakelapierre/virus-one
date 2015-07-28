@@ -6,7 +6,7 @@
 
 #include <virustest_experiment.h>
 
-namespace VirusTest { namespace Experiments { namespace NetworkPortNumber {
+namespace VirusTest { namespace Experiments { namespace Network { namespace PortNumber {
 
   class GreaterThan : public VirusTest::Experiment {
   public: // interface methods
@@ -22,4 +22,4 @@ namespace VirusTest { namespace Experiments { namespace NetworkPortNumber {
 
   };
 
-} /* NetworkPortNumber */ } /* Experiments */ } /* VirusTest */
+} /* Network */ } /* PortNumber */ } /* Experiments */ } /* VirusTest */
