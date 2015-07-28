@@ -8,6 +8,8 @@
 #include <list>
 #include <memory>
 
+#include <spdlog/spdlog.h>
+
 namespace VirusTest {
 
   class Experiment {
@@ -42,7 +44,7 @@ namespace VirusTest {
 
   protected: // methods
 
-    void expect(bool predicate, const std::string& message);
+    void expect(bool predicate, const std::string& testName, const std::string& message);
     void pass();
     void fail(const std::string& message);
     void incomplete(const std::string& message);
@@ -53,6 +55,7 @@ namespace VirusTest {
 
     std::string m_name;
     ExperimentResult m_result;
+    std::shared_ptr<spdlog::logger> m_log;
 
     typedef std::list<std::shared_ptr<Experiment>> ChildList;
     typedef ChildList::iterator ChildListIterator;

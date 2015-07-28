@@ -7,12 +7,14 @@
 #include <virusone/system/pollable.h>
 #include <virusone/services/uuid.h>
 
-#include <virusesp/service_command_queue.h>
+// #include <virusesp/service_command_queue.h>
 
 #include <rapidjson/document.h>
 
 #include <thread>
 #include <map>
+#include <future>
+#include <functional>
 
 namespace VirusEsp {
 
@@ -39,9 +41,10 @@ namespace VirusEsp {
 
     virtual const std::string getTypeName() const = 0;
     virtual void executeCommand(
-      rapidjson::Document& command,
+      const rapidjson::Document& command,
       rapidjson::Document& response
     ) = 0;
+    typedef std::future<void> ExecuteCommandFuture;
 
   public: // methods
 
@@ -50,15 +53,10 @@ namespace VirusEsp {
     virtual ~Service();
 
     const VirusOne::Services::Uuid& getUuid();
+    bool isActive() const;
     
-    rapidjson::Document& executeCommandAsync(
-      rapidjson::Document& command,
-      rapidjson::Document& response
-    );
-    rapidjson::Document& executeCommandDeferred(
-      rapidjson::Document& command,
-      rapidjson::Document& response
-    );
+    ExecuteCommandFuture executeCommandAsync(const rapidjson::Document& command, rapidjson::Document& response);
+    bool executeCommandDeferred(const rapidjson::Document& command, rapidjson::Document& response);
 
   protected: // attributes
 
@@ -66,7 +64,7 @@ namespace VirusEsp {
     std::shared_ptr<spdlog::logger> m_log;
     VirusOne::Services::Uuid m_serviceUuid;
 
-  private: // command queue thread (one per service)
+  private: // attributes
 
     bool m_bServiceActive;
 

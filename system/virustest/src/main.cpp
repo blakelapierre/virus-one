@@ -9,11 +9,11 @@
 #include <virustest_controller.h>
 #include <virustest_experiment.h>
 
-#include <virus_timestamp.h>
+#include <virusone/services/timestamp.h>
 
-#include <suites/system.h>
-#include <suites/network.h>
-#include <suites/json.h>
+#include <virustest/suites/system.h>
+#include <virustest/suites/network.h>
+#include <virustest/suites/json.h>
 
 /*
  * Main test script
@@ -30,9 +30,9 @@ int main (int argc, char* argv[]) {
   environment->queueSuite(std::make_shared<VirusTest::Suites::Network>());
   environment->queueSuite(std::make_shared<VirusTest::Suites::Json>());
 
-  VirusOne::Timestamp tsStart;
+  VirusOne::Services::Timestamp tsStart;
   environment->run();
-  VirusOne::Timestamp tsEnd;
+  VirusOne::Services::Timestamp tsEnd;
 
   log->info("VirusOne Unit Tests completed in {} seconds", tsEnd.secondsFrom(tsStart));
 

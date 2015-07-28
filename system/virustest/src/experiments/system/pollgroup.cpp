@@ -2,11 +2,11 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virus_macros.h>
-#include <virus_pollable.h>
-#include <virus_pollgroup.h>
+#include <virusone/macros.h>
+#include <virusone/system/pollable.h>
+#include <virusone/services/pollgroup.h>
 
-#include <experiments/pollgroup.h>
+#include <virustest/experiments/system/pollgroup.h>
 
 VirusTest::Experiments::PollGroup::PollGroup()
 : Experiment("PollGroup")
@@ -15,7 +15,7 @@ VirusTest::Experiments::PollGroup::PollGroup()
 VirusTest::Experiments::PollGroup::~PollGroup()
 {}
 
-class TestPollable : public VirusOne::Pollable {
+class TestPollable : public VirusOne::System::Pollable {
 public:
 
   TestPollable(int id)
@@ -44,11 +44,11 @@ protected:
 
 void
 VirusTest::Experiments::PollGroup::run() {
-  auto masterGroup = std::make_shared<VirusOne::PollGroup>();
+  auto masterGroup = std::make_shared<VirusOne::Services::PollGroup>();
   auto pollable = std::make_shared<TestPollable>(1);
   masterGroup->add(pollable);
 
-  auto group = std::make_shared<VirusOne::PollGroup>();
+  auto group = std::make_shared<VirusOne::Services::PollGroup>();
   masterGroup->add(group);
 
   pollable = std::make_shared<TestPollable>(2);

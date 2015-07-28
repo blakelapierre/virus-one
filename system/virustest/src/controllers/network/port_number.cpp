@@ -2,19 +2,19 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virus_macros.h>
-#include <controllers/network/port_number.h>
+#include <virusone/macros.h>
+#include <virustest/controllers/network/port_number.h>
 
 /*
  * Controlled Experiments
  */
-#include <experiments/network/port_number/assign.h>
-// #include <experiments/network/port_number/equality.h>
-// #include <experiments/network/port_number/inequality.h>
-// #include <experiments/network/port_number/less_than.h>
-// #include <experiments/network/port_number/greater_than.h>
-// #include <experiments/network/port_number/to_string.h>
-// #include <experiments/network/port_number/from_string.h>
+#include <virustest/experiments/network/port_number/assign.h>
+// #include <virustest/experiments/network/port_number/equality.h>
+// #include <virustest/experiments/network/port_number/inequality.h>
+// #include <virustest/experiments/network/port_number/less_than.h>
+// #include <virustest/experiments/network/port_number/greater_than.h>
+// #include <virustest/experiments/network/port_number/to_string.h>
+// #include <virustest/experiments/network/port_number/from_string.h>
 
 VirusTest::Controllers::Network::PortNumber::PortNumber()
 : VirusTest::Controller("Network::PortNumber")

@@ -2,8 +2,8 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virus_macros.h>
-#include <experiments/json/parse.h>
+#include <virusone/macros.h>
+#include <virustest/experiments/json/parse.h>
 
 #include <rapidjson/document.h>
 
@@ -22,17 +22,17 @@ VirusTest::Experiments::JsonParse::run() {
     rapidjson::Document document;
     document.Parse(jsonText);
 
-    expect(document.IsObject(), "generated document is not an object");
-    expect(document.HasMember("project"), "generated document does not have a 'project' member");
-    expect(document.HasMember("stars"), "generated document does not have a 'stars' member");
+    expect(document.IsObject(), "JsonParse", "generated document is not an object");
+    expect(document.HasMember("project"), "JsonParse", "generated document does not have a 'project' member");
+    expect(document.HasMember("stars"), "JsonParse", "generated document does not have a 'stars' member");
 
     rapidjson::Value& value = document["stars"];
-    expect(value.IsNumber(), "stars member is not a number");
-    expect(value == 10, "star count is not 10 as expected");
+    expect(value.IsNumber(), "JsonParse", "stars member is not a number");
+    expect(value == 10, "JsonParse", "star count is not 10 as expected");
 
     value = document["project"];
-    expect(value.IsString(), "project member is not a string");
-    expect(value == "virusone", "project is not set to 'virusone'");
+    expect(value.IsString(), "JsonParse", "project member is not a string");
+    expect(value == "virusone", "JsonParse", "project is not set to 'virusone'");
 
   } catch (std::exception e) {
 

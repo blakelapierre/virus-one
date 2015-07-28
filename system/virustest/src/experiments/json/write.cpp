@@ -2,8 +2,8 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virus_macros.h>
-#include <experiments/json/write.h>
+#include <virusone/macros.h>
+#include <virustest/experiments/json/write.h>
 
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>

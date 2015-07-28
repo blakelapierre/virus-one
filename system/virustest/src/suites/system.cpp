@@ -2,9 +2,9 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virus_macros.h>
+#include <virusone/macros.h>
 #include <virustest_controller.h>
-#include <suites/system.h>
+#include <virustest/suites/system.h>
 
 VirusTest::Suites::System::System()
 : VirusTest::Suite("VirusOne System")

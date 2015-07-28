@@ -25,7 +25,11 @@
  * deferred service commands.
  */
 
+#include <rapidjson/document.h>
+
 namespace VirusEsp {
+  
+  class Service;
 
   class ServiceCommand {
   public: // types
@@ -52,7 +56,6 @@ namespace VirusEsp {
 
     VirusOne::Services::Uuid m_uuid;
     Service& m_service;
-    CommandId m_commandId;
     const rapidjson::Document& m_request;
 
     CommandState m_eCommandState;

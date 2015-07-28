@@ -7,9 +7,9 @@ cmake_minimum_required (VERSION 2.6)
 project (virusone)
 add_compile_options ("-std=gnu++11")
 
-include (../libvirus/libvirus-exports.cmake)
-include (../libvirusesp/libvirusesp-exports.cmake)
-include (../libvirustest/libvirustest-exports.cmake)
+include (../libvirus/build/libvirus-exports.cmake)
+include (../libvirusesp/build/libvirusesp-exports.cmake)
+include (../libvirustest/build/libvirustest-exports.cmake)
 
 include_directories (
   include

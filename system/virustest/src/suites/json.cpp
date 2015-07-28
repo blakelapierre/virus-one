@@ -4,9 +4,9 @@
 
 #include <virustest_controller.h>
 
-#include <suites/json.h>
-#include <experiments/json_parse.h>
-#include <experiments/json_write.h>
+#include <virustest/suites/json.h>
+#include <virustest/experiments/json/parse.h>
+#include <virustest/experiments/json/write.h>
 
 VirusTest::Suites::Json::Json()
 : VirusTest::Suite("JSON Processing")

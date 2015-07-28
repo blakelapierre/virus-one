@@ -2,10 +2,10 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <experiments/network/port_number/assign.h>
+#include <virusone/macros.h>
+#include <virusone/network/port_number.h>
 
-#include <virus_macros.h>
-#include <virus_port_number.h>
+#include <virustest/experiments/network/port_number/assign.h>
 
 VirusTest::Experiments::Network::PortNumber::Assign::Assign()
 : Experiment("Network::PortNumber::Assign")
