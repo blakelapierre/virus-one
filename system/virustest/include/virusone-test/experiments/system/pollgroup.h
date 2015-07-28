@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <virustest_experiment.h>
+#include <virustest/experiment.h>
 
 namespace VirusTest { namespace Experiments {
 

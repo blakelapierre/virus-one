@@ -5,7 +5,7 @@
 #include <virusone/macros.h>
 #include <virusone/network/port_number.h>
 
-#include <virustest/experiments/network/port_number/assign.h>
+#include <virusone-test/experiments/network/port_number/assign.h>
 
 VirusTest::Experiments::Network::PortNumber::Assign::Assign()
 : Experiment("Network::PortNumber::Assign")

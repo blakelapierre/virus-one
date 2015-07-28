@@ -3,8 +3,9 @@
 // License: MIT (see LICENSE)
 
 #include <virusone/macros.h>
-#include <virustest_controller.h>
-#include <virustest/suites/system.h>
+#include <virustest/controller.h>
+
+#include <virusone-test/suites/system.h>
 
 VirusTest::Suites::System::System()
 : VirusTest::Suite("VirusOne System")

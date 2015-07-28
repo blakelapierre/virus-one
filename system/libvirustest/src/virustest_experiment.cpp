@@ -2,8 +2,8 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virustest_experiment.h>
-#include <virustest_exception.h>
+#include <virustest/experiment.h>
+#include <virustest/exception.h>
 
 #include <algorithm>
 

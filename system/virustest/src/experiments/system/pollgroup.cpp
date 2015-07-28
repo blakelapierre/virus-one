@@ -6,7 +6,7 @@
 #include <virusone/system/pollable.h>
 #include <virusone/services/pollgroup.h>
 
-#include <virustest/experiments/system/pollgroup.h>
+#include <virusone-test/experiments/system/pollgroup.h>
 
 VirusTest::Experiments::PollGroup::PollGroup()
 : Experiment("PollGroup")

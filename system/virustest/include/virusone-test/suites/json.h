@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <virustest_suite.h>
+#include <virustest/suite.h>
 
 namespace VirusTest { namespace Suites {
 

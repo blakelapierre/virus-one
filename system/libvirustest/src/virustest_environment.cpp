@@ -2,8 +2,8 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virustest_environment.h>
-#include <virustest_suite.h>
+#include <virustest/environment.h>
+#include <virustest/suite.h>
 
 VirusTest::Environment::Environment(const std::string& name)
 : m_name(name)

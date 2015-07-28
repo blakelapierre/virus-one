@@ -3,8 +3,7 @@
 // License: MIT (see LICENSE)
 
 #include <virusone/macros.h>
-#include <virustest/experiments/json/parse.h>
-
+#include <virusone-test/experiments/json/parse.h>
 #include <rapidjson/document.h>
 
 VirusTest::Experiments::JsonParse::JsonParse()

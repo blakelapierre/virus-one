@@ -2,8 +2,8 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virustest_suite.h>
-#include <virustest_controller.h>
+#include <virustest/suite.h>
+#include <virustest/controller.h>
 
 VirusTest::Suite::Suite(const std::string& name)
 : m_name(name)

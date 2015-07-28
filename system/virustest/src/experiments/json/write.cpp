@@ -3,7 +3,7 @@
 // License: MIT (see LICENSE)
 
 #include <virusone/macros.h>
-#include <virustest/experiments/json/write.h>
+#include <virusone-test/experiments/json/write.h>
 
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>

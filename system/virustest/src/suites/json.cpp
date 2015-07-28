@@ -2,11 +2,11 @@
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
-#include <virustest_controller.h>
+#include <virustest/controller.h>
 
-#include <virustest/suites/json.h>
-#include <virustest/experiments/json/parse.h>
-#include <virustest/experiments/json/write.h>
+#include <virusone-test/suites/json.h>
+#include <virusone-test/experiments/json/parse.h>
+#include <virusone-test/experiments/json/write.h>
 
 VirusTest::Suites::Json::Json()
 : VirusTest::Suite("JSON Processing")

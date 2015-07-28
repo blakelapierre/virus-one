@@ -4,8 +4,8 @@
 
 #include <virusone/macros.h>
 
-#include <virustest/suites/network.h>
-#include <virustest/controllers/network/port_number.h>
+#include <virusone-test/suites/network.h>
+#include <virusone-test/controllers/network/port_number.h>
 
 VirusTest::Suites::Network::Network()
 : VirusTest::Suite("Network")

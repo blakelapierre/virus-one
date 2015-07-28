@@ -4,16 +4,16 @@
 
 #include <spdlog/spdlog.h>
 
-#include <virustest_system.h>
-#include <virustest_environment.h>
-#include <virustest_controller.h>
-#include <virustest_experiment.h>
+#include <virustest/system.h>
+#include <virustest/environment.h>
+#include <virustest/controller.h>
+#include <virustest/experiment.h>
 
 #include <virusone/services/timestamp.h>
 
-#include <virustest/suites/system.h>
-#include <virustest/suites/network.h>
-#include <virustest/suites/json.h>
+#include <virusone-test/suites/system.h>
+#include <virusone-test/suites/network.h>
+#include <virusone-test/suites/json.h>
 
 /*
  * Main test script

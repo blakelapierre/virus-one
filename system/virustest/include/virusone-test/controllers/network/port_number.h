@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <virustest_controller.h>
+#include <virustest/controller.h>
 
 namespace VirusTest { namespace Controllers { namespace Network {
 

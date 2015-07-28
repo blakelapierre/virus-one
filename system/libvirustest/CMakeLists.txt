@@ -8,6 +8,7 @@ project (virusone)
 add_compile_options ("-std=gnu++11")
 
 include_directories (../vendor/spdlog/include)
+include_directories (../vendor/rapidjson/include)
 
 add_library(
   virustest

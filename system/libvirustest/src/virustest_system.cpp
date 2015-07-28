@@ -1,4 +1,4 @@
-#include <virustest_system.h>
+#include <virustest/system.h>
 
 VirusTest::System::System()
 : m_systemLog(spdlog::stdout_logger_mt("system"))
