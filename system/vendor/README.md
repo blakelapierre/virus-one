@@ -10,4 +10,4 @@ git will then populate the submodules throughout the repo (which are all kept he
 [RapidJSON]() is used to implement JSON encoding and parsing within VirusOne. The VirusOne TCP protocol is implemented to transport JSON-encoded commands and their responses throughout the system. This allows very easy integration with Node.js and other Web-based technologies to help extend what VirusOne can do throughout the years to come.
 
 ## spdlog
-Super-fast C++ logging library. It is highly configurable, easily attached to a variety of sinks/databases for centralized reporting and incredibly fast using very little memory.
+[spdlog](https://github.com/gabime/spdlog) is a highly configurable logging service that is easily attached to a variety of sinks/databases for centralized reporting. It is incredibly fast and uses very little memory.
