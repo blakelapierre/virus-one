@@ -18,7 +18,6 @@ add_library(
   src/network/host.cpp
   src/network/port_number.cpp
   src/network/socket.cpp
-  src/services/log.cpp
   src/services/pollgroup.cpp
   src/services/smoothed_value.cpp
   src/services/timestamp.cpp

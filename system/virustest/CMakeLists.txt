@@ -29,7 +29,7 @@ add_executable(
   "src/suites/system.cpp"
   "src/suites/network.cpp"
   "src/suites/json.cpp"
-  "src/main.cpp"
+  "src/virusone-test.cpp"
 )
 
 add_dependencies(

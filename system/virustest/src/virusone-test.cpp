@@ -1,4 +1,4 @@
-// test/main.cpp
+// virusone-test.cpp
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 

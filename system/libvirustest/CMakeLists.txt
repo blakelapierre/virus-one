@@ -3,6 +3,8 @@
 # License: MIT (see LICENSE)
 
 cmake_minimum_required (VERSION 2.6)
+include (../libvirus/build/libvirus-exports.cmake)
+include (../libvirusesp/build/libvirusesp-exports.cmake)
 
 project (virusone)
 add_compile_options ("-std=gnu++11")
