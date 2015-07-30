@@ -5,11 +5,15 @@
 cmake_minimum_required (VERSION 2.6)
 add_compile_options ("-std=gnu++11")
 
-include (../libvirus/build/libvirus-exports.cmake)
-include (../libvirusesp/build/libvirusesp-exports.cmake)
+include(
+  ../libvirus/build/libvirus-exports.cmake
+  ../libvirusesp/build/libvirusesp-exports.cmake
+)
 
-include_directories (../vendor/spdlog/include)
-include_directories (../vendor/rapidjson/include)
+include_directories(
+  ../vendor/spdlog/include
+  ../vendor/rapidjson/include
+)
 
 add_library(
   virustest
