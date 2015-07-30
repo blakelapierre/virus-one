@@ -44,6 +44,7 @@ namespace VirusTest {
 
   protected: // methods
 
+    void it(const std::string& spec, const std::function<void (void)>& specRunner);
     void expect(bool predicate, const std::string& testName, const std::string& message);
     void pass();
     void fail(const std::string& message);
@@ -54,6 +55,7 @@ namespace VirusTest {
   protected: // attributes
 
     std::string m_name;
+    std::string m_currentSpecTitle;
     ExperimentResult m_result;
     std::shared_ptr<spdlog::logger> m_log;
 

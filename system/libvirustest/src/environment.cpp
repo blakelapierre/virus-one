@@ -1,4 +1,4 @@
-// virustest_environment.cpp
+// environment.cpp
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 

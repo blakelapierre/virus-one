@@ -13,7 +13,7 @@
 
 #include <virusone-test/suites/system.h>
 #include <virusone-test/suites/network.h>
-#include <virusone-test/suites/json.h>
+#include <virusone-test/suites/vendors/rapidjson.h>
 
 /*
  * Main test script
@@ -28,7 +28,7 @@ int main (int argc, char* argv[]) {
   auto environment = std::make_shared<VirusTest::Environment>("virustest");
   environment->queueSuite(std::make_shared<VirusTest::Suites::System>());
   environment->queueSuite(std::make_shared<VirusTest::Suites::Network>());
-  environment->queueSuite(std::make_shared<VirusTest::Suites::Json>());
+  environment->queueSuite(std::make_shared<VirusTest::Suites::Vendors::RapidJson>());
 
   VirusOne::Services::Timestamp tsStart;
   environment->run();

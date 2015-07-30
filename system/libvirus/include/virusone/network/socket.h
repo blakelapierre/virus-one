@@ -15,8 +15,7 @@
 
 namespace VirusOne { namespace Network {
 
-  class AddressIpV4;
-  class PortNumber;
+  class HostAddress;
 
   class Socket : public VirusOne::System::Stream {
   public:
@@ -26,18 +25,18 @@ namespace VirusOne { namespace Network {
       kSocketRaw = 0,
       kSocketUdp,
       kSocketTcp
-    };    
+    };
 
     Socket(SocketType eType);
     Socket(SocketType eType, int s);
     Socket(const Socket& s);
     virtual ~Socket();
 
-    virtual bool bind(const AddressIpV4& address, const PortNumber& port);
+    virtual bool bind(const HostAddress& host);
     virtual bool listen(size_t backlogLen);
-    virtual bool connect(const AddressIpV4& address, const PortNumber& port);
+    virtual bool connect(const HostAddress& host);
     virtual void close();
-    
+
     virtual int read(void* pDestBuffer, unsigned int maxDataLen);
     virtual int write(void* pDataBuffer, unsigned int dataBufferLength);
 

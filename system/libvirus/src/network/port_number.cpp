@@ -15,8 +15,8 @@ VirusOne::Network::PortNumber::PortNumber(const PortNumber& port)
 : m_portNumber(port.m_portNumber)
 {}
 
-VirusOne::Network::PortNumber::PortNumber(uint16_t port)
-: m_portNumber(htons(port))
+VirusOne::Network::PortNumber::PortNumber(uint16_t portNumber)
+: m_portNumber(portNumber)
 {}
 
 VirusOne::Network::PortNumber::~PortNumber()
@@ -50,13 +50,8 @@ VirusOne::Network::PortNumber::operator = (const PortNumber& port) {
 }
 
 void
-VirusOne::Network::PortNumber::operator = (unsigned short port) {
-  m_portNumber = htons(port);
-}
-
-uint16_t
-VirusOne::Network::PortNumber::value() const {
-  return ntohs(m_portNumber);
+VirusOne::Network::PortNumber::operator = (unsigned short portNumber) {
+  m_portNumber = portNumber;
 }
 
 std::string
@@ -64,4 +59,14 @@ VirusOne::Network::PortNumber::toString() const {
   char buffer[16];
   snprintf(buffer,sizeof(buffer), "%d", ntohs(m_portNumber));
   return std::string(buffer);
+}
+
+uint16_t
+VirusOne::Network::PortNumber::hton() const {
+  return htons(m_portNumber);
+}
+
+void
+VirusOne::Network::PortNumber::ntoh(uint16_t portNumber) {
+  m_portNumber = ntohs(portNumber);
 }

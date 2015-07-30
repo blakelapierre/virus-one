@@ -1,9 +1,9 @@
-// virustest_experiment.cpp
+// experiment.cpp
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
 #include <virustest/experiment.h>
-#include <virustest/exception.h>
+#include <virustest/test_exception.h>
 
 #include <algorithm>
 
@@ -39,45 +39,69 @@ VirusTest::Experiment::removeChild(std::shared_ptr<Experiment> experiment) {
 }
 
 void
-VirusTest::Experiment::expect(bool predicate, const std::string& testName, const std::string& message) {
-  if (!predicate) {
-    m_log->error("test {} produced unexpected results", testName);
-    fail(message); // fail() throws an exception
-    return;
-  }
-  m_log->info("test {} PASS", testName);
+VirusTest::Experiment::it(
+  const std::string& specTitle,
+  const std::function<void (void)>& specRunner
+)
+{
+  m_currentSpecTitle = specTitle;
+  specRunner(); // fail() throws
+  pass();       // if execution makes it here, no exception(s) occured
 }
 
 void
-VirusTest::Experiment::setResult(ExperimentResult result) {
+VirusTest::Experiment::expect(
+  bool predicate,
+  const std::string& testName,
+  const std::string& message
+)
+{
+  if (!predicate) {
+    m_log->error("{} should {}: ", testName, m_currentSpecTitle, message);
+    fail(message); // fail() throws an exception
+    return;
+  }
+  m_log->info("{}::{} PASS", m_name, testName);
+}
+
+void
+VirusTest::Experiment::setResult(ExperimentResult result)
+{
   m_result = result;
 }
 
 void
-VirusTest::Experiment::pass() {
+VirusTest::Experiment::pass()
+{
   setResult(kResultPass);
-  m_log->info("experiment {} PASS", m_name);
+  m_log->info("{} PASS", m_name);
 }
 
 void
-VirusTest::Experiment::fail(const std::string& message) {
+VirusTest::Experiment::fail(const std::string& message)
+{
   setResult(kResultFail);
-  throw new VirusTest::/*ExperimentFail*/Exception(message);
+  m_log->error("{} FAIL {}", m_name, message);
+  throw new VirusTest::/*ExperimentFail*/TestException(message);
 }
 
 void
-VirusTest::Experiment::incomplete(const std::string& message) {
+VirusTest::Experiment::incomplete(const std::string& message)
+{
   setResult(kResultIncomplete);
-  throw new VirusTest::/*ExperimentIncomplete*/Exception(message);
+  m_log->error("{} INCOMPLETE {}", m_name, message);
+  throw new VirusTest::/*ExperimentIncomplete*/TestException(message);
 }
 
 VirusTest::Experiment::ExperimentResult
-VirusTest::Experiment::getResult() const {
+VirusTest::Experiment::getResult() const
+{
   return m_result;
 }
 
 const std::string
-VirusTest::Experiment::getResultText() const {
+VirusTest::Experiment::getResultText() const
+{
   switch (m_result) {
     case kResultFail:
       return "kResultFail";

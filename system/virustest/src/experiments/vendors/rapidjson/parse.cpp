@@ -3,18 +3,18 @@
 // License: MIT (see LICENSE)
 
 #include <virusone/macros.h>
-#include <virusone-test/experiments/json/parse.h>
+#include <virusone-test/experiments/vendors/rapidjson/parse.h>
 #include <rapidjson/document.h>
 
-VirusTest::Experiments::JsonParse::JsonParse()
-: Experiment("JsonParse")
+VirusTest::Experiments::Vendors::RapidJson::Parse::Parse()
+: Experiment("Vendors::RapidJson::Parse")
 {}
 
-VirusTest::Experiments::JsonParse::~JsonParse()
+VirusTest::Experiments::Vendors::RapidJson::Parse::~Parse()
 {}
 
 void
-VirusTest::Experiments::JsonParse::run() {
+VirusTest::Experiments::Vendors::RapidJson::Parse::run() {
   const char* jsonText = "{ \"project\":\"virusone\", \"stars\":10 }";
   try {
 

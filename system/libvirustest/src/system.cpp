@@ -1,3 +1,7 @@
+// system.cpp
+// Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
+// License: MIT (see LICENSE)
+
 #include <virustest/system.h>
 
 VirusTest::System::System()

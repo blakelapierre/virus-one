@@ -9,20 +9,23 @@
 
 #include <string>
 
+struct sockaddr_in;
+
 namespace VirusOne { namespace Network {
 
-  class Host {
+  class HostAddress {
   public:
 
-    Host();
-    Host(const AddressIpV4& address, const PortNumber& port);
-    Host(uint32_t address, uint16_t port);
-    virtual ~Host();
+    HostAddress();
+    HostAddress(const AddressIpV4& address, const PortNumber& port);
+    HostAddress(uint32_t address, uint16_t port);
+    virtual ~HostAddress();
 
-    virtual bool operator == (const Host& host) const;
-    virtual bool operator != (const Host& host) const;
+    virtual bool operator == (const HostAddress& host) const;
+    virtual bool operator != (const HostAddress& host) const;
 
     virtual std::string toString() const;
+    virtual struct sockaddr_in toSockAddrIn() const;
 
   protected:
 

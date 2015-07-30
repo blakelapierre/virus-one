@@ -28,6 +28,9 @@ namespace VirusOne { namespace Network {
     virtual bool fromString(const std::string& address);
     virtual std::string toString() const;
 
+    virtual uint32_t hton() const;
+    virtual void ntoh(uint32_t address);
+
   protected:
 
     uint32_t m_address;

@@ -15,7 +15,7 @@ include_directories(
 add_library(
   virus
   src/network/address_ipv4.cpp
-  src/network/host.cpp
+  src/network/host_address.cpp
   src/network/port_number.cpp
   src/network/socket.cpp
   src/services/pollgroup.cpp
@@ -28,5 +28,4 @@ add_library(
 )
 
 target_include_directories (virus PUBLIC include)
-
 export(TARGETS virus FILE libvirus-exports.cmake)

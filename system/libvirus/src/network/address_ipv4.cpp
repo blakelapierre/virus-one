@@ -70,3 +70,13 @@ VirusOne::Network::AddressIpV4::toString() const {
   in.s_addr = m_address;
   return std::string(inet_ntoa(in));
 }
+
+uint32_t
+VirusOne::Network::AddressIpV4::hton() const {
+  return htonl(m_address);
+}
+
+void
+VirusOne::Network::AddressIpV4::ntoh(uint32_t address) {
+  m_address = ntohl(address);
+}

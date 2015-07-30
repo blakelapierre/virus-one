@@ -5,8 +5,7 @@
 #include <virusone/macros.h>
 #include <virusone/system/exception.h>
 #include <virusone/network/socket.h>
-#include <virusone/network/address_ipv4.h>
-#include <virusone/network/port_number.h>
+#include <virusone/network/host_address.h>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -49,26 +48,32 @@ VirusOne::Network::Socket::Socket(const Socket& s)
 , m_s(s.m_s)
 {}
 
-VirusOne::Network::Socket::~Socket()
-{
+VirusOne::Network::Socket::~Socket() {
   close();
 }
 
 bool
-VirusOne::Network::Socket::bind(const AddressIpV4& address, const PortNumber& portNumber)
-{
-  return false;
+VirusOne::Network::Socket::bind(const HostAddress& host) {
+  struct sockaddr_in bindAddress = host.toSockAddrIn();
+  if (::bind(m_s, (struct sockaddr*)&bindAddress, sizeof(bindAddress)) < 0) {
+    m_log->error("failed to bind socket to {}", host.toString());
+    return false;
+  }
+  return true;
 }
 
 bool
-VirusOne::Network::Socket::listen(size_t backlogLen)
-{
-  return false;
+VirusOne::Network::Socket::listen(size_t backlogLen) {
+  if (::listen(m_s, backlogLen) == -1) {
+    m_log->error("failed to set listen backlog to {}", backlogLen);
+    return false;
+  }
+  m_log->debug("socket {} backlog set to {}", m_s, backlogLen);
+  return true;
 }
 
 void
-VirusOne::Network::Socket::close()
-{
+VirusOne::Network::Socket::close() {
   if (m_s != INVALID_SOCKET) {
     ::close(m_s);
     m_s = INVALID_SOCKET;
@@ -76,11 +81,19 @@ VirusOne::Network::Socket::close()
 }
 
 int
-VirusOne::Network::Socket::read(void* pDestBuffer, unsigned int maxDataLen) {
+VirusOne::Network::Socket::read(
+  void* pDestBuffer,
+  unsigned int maxDataLen
+)
+{
   return 0;
 }
 
 int
-VirusOne::Network::Socket::write(void* pDataBuffer, unsigned int dataBufferLength) {
+VirusOne::Network::Socket::write(
+  void* pDataBuffer,
+  unsigned int dataBufferLength
+)
+{
   return 0;
 }
