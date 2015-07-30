@@ -19,17 +19,18 @@ include_directories (
 
 add_executable(
   virusone-test
+  "src/virusone-test.cpp"
+  "src/suites/system.cpp"
+  "src/suites/network.cpp"
+  "src/suites/vendors/rapidjson.cpp"
   "src/controllers/network/port_number.cpp"
-  "src/experiments/json/parse.cpp"
-  "src/experiments/json/write.cpp"
+  "src/controllers/vendors/rapidjson.cpp"
+  "src/experiments/vendors/rapidjson/parse.cpp"
+  "src/experiments/vendors/rapidjson/write.cpp"
   "src/experiments/network/port_number/assign.cpp"
   "src/experiments/network/port_number/equality.cpp"
   "src/experiments/network/port_number/inequality.cpp"
   "src/experiments/system/pollgroup.cpp"
-  "src/suites/system.cpp"
-  "src/suites/network.cpp"
-  "src/suites/json.cpp"
-  "src/virusone-test.cpp"
 )
 
 add_dependencies(

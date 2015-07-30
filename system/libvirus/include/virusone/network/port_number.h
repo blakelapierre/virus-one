@@ -14,7 +14,7 @@ namespace VirusOne { namespace Network {
 
     PortNumber();
     PortNumber(const PortNumber& port);
-    PortNumber(uint16_t port);
+    PortNumber(uint16_t portNumber);
     virtual ~PortNumber();
 
     virtual bool operator == (const PortNumber& port) const;
@@ -23,10 +23,11 @@ namespace VirusOne { namespace Network {
     virtual bool operator < (const PortNumber& port) const;
 
     virtual void operator = (const PortNumber& port);
-    virtual void operator = (unsigned short port);
-    virtual uint16_t value() const;
+    virtual void operator = (unsigned short portNumber);
 
     virtual std::string toString() const;
+    virtual uint16_t hton() const;
+    virtual void ntoh(uint16_t portNumber);
 
   protected:
 

@@ -3,23 +3,33 @@
 # License: MIT (see LICENSE)
 
 cmake_minimum_required (VERSION 2.6)
+add_compile_options ("-std=gnu++11")
+
 include (../libvirus/build/libvirus-exports.cmake)
 include (../libvirusesp/build/libvirusesp-exports.cmake)
-
-project (virusone)
-add_compile_options ("-std=gnu++11")
 
 include_directories (../vendor/spdlog/include)
 include_directories (../vendor/rapidjson/include)
 
 add_library(
   virustest
-  src/virustest_controller.cpp
-  src/virustest_environment.cpp
-  src/virustest_experiment.cpp
-  src/virustest_suite.cpp
-  src/virustest_system.cpp
+  src/controller.cpp
+  src/environment.cpp
+  src/experiment.cpp
+  src/suite.cpp
+  src/system.cpp
+  src/test_exception.cpp
 )
 
+add_dependencies(
+  virustest
+  virusesp
+  virus
+)
 target_include_directories (virustest PUBLIC include)
+target_link_libraries (
+  virustest
+  LINK_PUBLIC   virusesp
+  LINK_PUBLIC   virus
+)
 export(TARGETS virustest FILE libvirustest-exports.cmake)

@@ -1,9 +1,10 @@
-// virus_test_controller.cpp
+// controller.cpp
 // Copyright (C) 2015 Rob Colbert <rob.isConnected@gmail.com>
 // License: MIT (see LICENSE)
 
 #include <virustest/controller.h>
 #include <virustest/experiment.h>
+
 #include <algorithm>
 
 VirusTest::Controller::Controller(
