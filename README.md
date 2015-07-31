@@ -7,15 +7,16 @@ installer is simply not the current priority.
 
 ## Project Directory Structure
 
-| Directory           | Component                                               |
-| api                 | The ExpressJS-based Node.js API server                  |
-| data                | MongoDB database files                                  |
-| fe                  | The VirusOne AngularJS HTML5 Front End                  |
-| system              | VirusOne C++ Components                                 |
-| system/libvirus     | VirusOne Application Development Library                |
-| system/libvirusesp  | VirusOne Extra-Sensory Perception (ESP) Library         |
-| system/libvirustest | VirusOne Unit and Performance Testing Framework         |
-| system/virustest    | VirusOne Unit and Performance Testing Application       |
+Directory           | Component                                               
+--------------------|---------------------------------------------------
+api                 | The ExpressJS-based Node.js API server
+data                | MongoDB database files
+fe                  | The VirusOne AngularJS HTML5 Front End
+system              | VirusOne C++ Components
+system/libvirus     | VirusOne Application Development Library
+system/libvirusesp  | VirusOne Extra-Sensory Perception (ESP) Library
+system/libvirustest | VirusOne Unit and Performance Testing Framework
+system/virustest    | VirusOne Unit and Performance Testing Application
 
 ## Getting Started
 The VirusOne repository includes links to submodules. To clone into the entire 
